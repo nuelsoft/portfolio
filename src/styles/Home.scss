@@ -1,0 +1,118 @@
+.codeBraces {
+  color: #d5dae3;
+  font-size: 200%;
+  font-weight: bolder;
+}
+
+.codeDetailTitle {
+  color: rgba(186, 170, 170, 0.79)
+}
+
+.codeDetailValue {
+  color: rgba(255, 251, 0, 0.9);
+  font-weight: bold;
+  font-size: 125%;
+  transition: .2s ease-in-out;
+}
+
+.codeDetailValue:hover {
+  background-color: #4a4b4e;
+  font-weight: bolder;
+  font-size: 150%;
+}
+
+.codeDetails {
+  margin-left: 30px;
+  padding: 10px;
+}
+
+.me {
+  box-shadow: rgba(17, 12, 46, 0.15) 0 48px 100px 0;
+  border: 3px solid #ffffff;
+  border-radius: 10px;
+  transition: .3s ease-in-out;
+}
+
+
+.me:hover {
+  transform: scale(1.1);
+}
+
+.bio {
+  margin: auto;
+  color: gray;
+  font-size: 150%
+}
+
+.sectionHead {
+  text-align: start;
+  font-weight: bolder;
+  font-size: 400%;
+  color: rgba(113, 108, 108, 0.49);
+}
+
+.sectionHeadHighlight {
+  color: #0f0632;
+  transition: .2s ease-in-out;
+}
+
+.lightHigh {
+  color: white
+}
+
+.light {
+  color: #c8c5e2
+}
+
+.normalizeText {
+  text-align: start;
+}
+
+$clients: (
+        1 'varscon' 'https://varscongroup.com/assets/img/black-logo.png',
+        2 'skernel' 'http://www.skernel.com/assets/images/logo.png',
+        3 'rad5' 'https://rad5.com.ng/res/images/rad5hub.png'
+);
+
+$size: 6.25rem;
+
+@each $i, $key, $image in $clients {
+  .Client-Image-#{$key} {
+    object-fit: cover;
+    background-repeat: repeat-y;
+    background-position: center;
+    background-size: contain;
+    height: $size;
+    width: $size;
+    filter: grayscale(1);
+    background-image: url($image);
+    margin: 10px;
+    transition: 0.4s;
+    cursor: pointer;
+    animation: swapFilter #{$i + 6}s infinite #{$i + 1}s;
+  }
+
+  .Client-Image-#{$key}:hover {
+    filter: none;
+    background-position: center $size;
+    animation: unset;
+  }
+}
+
+@keyframes swapFilter {
+  0%,
+  5% {
+    filter: grayscale(1);
+    background-position: center;
+  }
+  10%,
+  25% {
+    filter: none;
+    background-position: center $size;
+  }
+  30%,
+  100% {
+    filter: grayscale(1);
+    background-position: center;
+  }
+}

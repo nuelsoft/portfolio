@@ -1,0 +1,30 @@
+.enter {
+  animation: Enter .7s;
+}
+
+@keyframes Enter {
+  from {
+    opacity: 0;
+    //transform: translateY(200%);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0%);
+  }
+}
+
+.leave {
+  animation: Leave 0.3s ease;
+}
+
+@keyframes Leave {
+  from {
+    opacity: 1;
+    transform: translateY(0%);
+
+  }
+  to {
+    opacity: 0;
+    transform: translateY(150%);
+  }
+}
