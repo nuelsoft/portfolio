@@ -5,12 +5,14 @@ body {
   sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  height: 100%;
+
 }
 
-html {
+html, #root {
   margin: 0;
   padding: 0;
-  background-color: #0f0632;
+  height: 100%;
 }
 
 code, .code {
@@ -21,3 +23,4 @@ code, .code {
 @import 'animations';
 @import 'App';
 @import 'Home';
+@import 'Preview';
