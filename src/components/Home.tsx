@@ -1,8 +1,6 @@
 import React, {useState} from "react";
-import {Box, Container, Grid} from "@material-ui/core";
-import {heightTimes, widthTimes} from "../utils/core";
+import {Box, Grid} from "@material-ui/core";
 import {basic} from "../__constants/basic";
-import {nuel} from "../__constants/nuel";
 import Preview from "./preview";
 
 const Home = (): JSX.Element => {
